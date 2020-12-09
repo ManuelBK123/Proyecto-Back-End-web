@@ -1,9 +1,14 @@
-from rest_framework import serializers  
+from rest_framework import serializers
+# ----------modelos------------
+from Profile.models import Profile
+from Profile.models import ProfileWeb
 
-#----------------MODELOS----------------
-from Profile.models import ProfileModel 
-
-class ProfileModelSerializer(serializers.ModelSerializer ):
+class ProfileModelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ProfileModel
-        fields = ('__all__')
+        model = Profile
+        fields = ('__all__') 
+        
+class ProfileWebSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProfileWeb
+        fields = ('__all__') 
