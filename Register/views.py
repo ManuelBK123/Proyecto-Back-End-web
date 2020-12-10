@@ -11,7 +11,7 @@ from rest_framework.permissions import AllowAny
 
 class userModelWiev(APIView):
     permission_classes = (AllowAny,)
-    # serializer_class = UserSerializer
+    serializer_class = UserSerializer
     def post(self,request):
         print("entro")
         user = User.objects.create_user(request.data.get("username"), request.data.get("email"), request.data.get("password"))
